@@ -1,0 +1,30 @@
+<h1>Listing wikis for <%= @user.email %></h1>
+<table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Question</th>
+      <th>Answer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.wikis.each do |wiki| %>
+      <tr>
+        <td><%= wiki.topic %></td>
+        <td><%= wiki.question %></td>
+        <td><%= wiki.answer %></td>
+        <td><%= link_to 'Show', wiki %></td>
+        <td><%= link_to 'Edit', edit_wiki_path(wiki) %></td>
+        <td><%= link_to 'Destroy', wiki, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+    <% end %>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<%= link_to 'New Wiki', root_path %>

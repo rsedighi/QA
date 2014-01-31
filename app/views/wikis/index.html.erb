@@ -1,0 +1,37 @@
+<h1>Listing wikis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Question</th>
+      <th>Answer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wikis.each do |wiki| %>
+      <div class="wiki">
+      </div>
+      <tr>
+        <td><%= wiki.topic %></td>
+        <td><%= wiki.question %></td>
+        <td><%= wiki.answer %></td>
+        <td><%= link_to 'Show', wiki %></td>
+        <td><%= link_to 'Edit', edit_wiki_path(wiki) %></td>
+        <td><%= link_to 'Destroy', wiki, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></br>
+<%= link_to 'Sign Up', new_user_registration_path %></br>
+<%= link_to 'Sign In', new_user_session_path %></br>
+
+<%= link_to 'New Wiki', new_wiki_path %>
