@@ -1,6 +1,6 @@
 QA
 ====
-A rails app with focus on has_many through => relationships.
+A rails app with focus on has_many :through => relationships.
 
 
 ##License
